@@ -1,33 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+import 'parallax_widget.dart';
+class MobileHomePage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Parallax",
-      debugShowCheckedModeBanner: false,
-      home: PageView(
-        scrollDirection: Axis.vertical,
-        children: [
-          MyHomePage(),
-          ContentPage(),
-        ],
-      ),
-    );
-  }
+  _MobileHomePageState createState() => _MobileHomePageState();
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _MobileHomePageState extends State<MobileHomePage> {
   double rateZero = 0;
   double rateOne = 0;
   double rateTwo = 0;
@@ -67,24 +45,24 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         child: Stack(
           children: <Widget>[
-            ParallaxWidget(
-              top: rateZero,
-              asset: "parallax0",
-              height: sheight,
-              width: swidth,
-            ),
-            ParallaxWidget(
-              top: rateOne,
-              asset: "parallax1",
-              height: sheight,
-              width: swidth,
-            ),
-            ParallaxWidget(
-              top: rateTwo,
-              asset: "parallax2",
-              height: sheight,
-              width: swidth,
-            ),
+            // ParallaxWidget(
+            //   top: rateZero,
+            //   asset: "parallax0",
+            //   height: sheight,
+            //   width: swidth,
+            // ),
+            // ParallaxWidget(
+            //   top: rateOne,
+            //   asset: "parallax1",
+            //   height: sheight,
+            //   width: swidth,
+            // ),
+            // ParallaxWidget(
+            //   top: rateTwo,
+            //   asset: "parallax2",
+            //   height: sheight,
+            //   width: swidth,
+            // ),
             ParallaxWidget(
               top: rateThree,
               asset: "parallax3",
@@ -241,34 +219,6 @@ class ContentPage extends StatelessWidget {
   }
 }
 
-class ParallaxWidget extends StatelessWidget {
-  const ParallaxWidget({
-    Key key,
-    @required this.top,
-    @required this.asset,
-    @required this.height,
-    @required this.width,
-  }) : super(key: key);
-
-  final double top;
-  final String asset;
-  final double height;
-  final double width;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedPositioned(
-      duration: Duration(milliseconds: 250),
-      left: -45,
-      top: top,
-      child: Container(
-        height: height,
-        width: width + 50,
-        child: Image.asset("$asset.png", fit: BoxFit.cover),
-      ),
-    );
-  }
-}
 
 //
 //
