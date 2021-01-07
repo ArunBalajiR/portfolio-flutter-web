@@ -15,24 +15,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-//
-//
-
-
-
-//
-// Stack(
-// children: <Widget>[
-// Image(
-// image: AssetImage(
-// "$asset.png",
-// ),
-// height: height,
-// width: width,
-// fit: BoxFit.cover,
-// ),
-// ],
-// );

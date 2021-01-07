@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'parallax_widget.dart';
-import 'package:show_up_animation/show_up_animation.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'common_widgets.dart';
 import 'icons.dart';
+import 'title.dart';
+import 'constants.dart';
 
 class DesktopHomePage extends StatefulWidget {
   @override
@@ -25,6 +26,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
   bool _visible = false;
 
   Widget name;
+  Widget animatedIcons;
 
   ScrollController _controller = ScrollController();
 
@@ -36,10 +38,14 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
     _controller.addListener(() {
       if (_controller.position.atEdge) {
         if (_controller.position.pixels == 0) {
-          // _visible = !_visible;
+          _visible = !_visible;
+          animatedIcons = null;
+          name = null;
+
         } else {
-          print("i'm at bottom");
-          // _visible = !_visible;
+          animatedIcons = AnimativeIcons();
+          _visible = !_visible;
+          name = AnimativeTitle();
 
         }
       }
@@ -51,8 +57,9 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
     MediaQueryData mediaQueryData = MediaQuery.of(context);
     double sheight = mediaQueryData.size.height;
     double swidth = mediaQueryData.size.width;
+
     return Scaffold(
-      backgroundColor: Color(0xff210002),
+      backgroundColor: kDarkBrownColor,
       body: NotificationListener(
         onNotification: (v) {
           if (v is ScrollUpdateNotification) {
@@ -67,38 +74,8 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
               rateTwo -= v.scrollDelta / 4;
               rateOne -= v.scrollDelta / 4.5;
               rateZero -= v.scrollDelta / 5;
-              name = ShowUpAnimation(
-                animationDuration: Duration(seconds: 5),
-                curve: Curves.fastLinearToSlowEaseIn,
-                direction: Direction.vertical,
-                offset: 1.0,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'Arun Balaji R',
-                        style: GoogleFonts.montserrat(
-                          fontSize: 60,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xffFEAE00),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Developer  •  Designer  •  Flutter Enthusiast  •  Open to Learning',
-                        style: GoogleFonts.montserrat(
-                          fontSize: 15,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
+
+
             });
           }
 
@@ -168,35 +145,47 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                   color: Colors.transparent,
                 ),
                 Container(
-                  color: Color(0xff210002),
+                  color: kDarkBrownColor,
                   width: double.infinity,
                   padding: EdgeInsets.only(top: 70),
                   child: Container(
                     height: sheight,
                     width: swidth,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
+
                       children: <Widget>[
                         SizedBox(),
                         Center(
                           child: name,
                         ),
-
-                        Text(
-                          '© Copyright 2020, ArunBalajiR ',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 15,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                          ),
+                        SizedBox(height: 30.0),
+                        Container(
+                          child: animatedIcons,
                         ),
+
                       ],
                     ),
-                    color: Color(0xff210002),
+                    color: kDarkBrownColor,
                   ),
                 ),
               ],
+            ),
+            AnimatedOpacity(
+              duration: Duration(seconds:1),
+              opacity: _visible ? 1.0 : 0.0,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children:<Widget>[
+
+                  Center(
+                    child: copyRight,
+                  ),
+
+                ],
+              ),
             ),
           ],
         ),
@@ -204,3 +193,5 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
     );
   }
 }
+
+
