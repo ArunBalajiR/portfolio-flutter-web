@@ -16,8 +16,8 @@ class ParallaxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedPositioned(
-      duration: Duration(milliseconds: 250),
+    return Positioned(
+      // duration: Duration(milliseconds: 1000),
       left: -45,
       top: top,
       child: Container(
