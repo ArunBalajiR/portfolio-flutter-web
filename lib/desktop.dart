@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'parallax_widget.dart';
 import 'common_widgets.dart';
 import 'icons.dart';
+import 'responsive_widget.dart';
 import 'title.dart';
 import 'constants.dart';
 
@@ -16,10 +17,10 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
   double rateTwo = 0;
   double rateThree = 0;
   double rateFour = 0;
-  double rateFive = 0;
-  double rateSix = 0;
-  double rateSeven = 0;
-  double rateEight = 90;
+  double rateFive = 10;
+  double rateSix = 10;
+  double rateSeven = 10;
+  double rateEight = 100;
 
   String asset;
   double top;
@@ -38,14 +39,17 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
     _controller.addListener(() {
       if (_controller.position.atEdge) {
         if (_controller.position.pixels == 0) {
-          _visible = !_visible;
+          _visible = false;
           animatedIcons = null;
           name = null;
 
         } else {
           animatedIcons = AnimativeIcons();
-          _visible = !_visible;
-          name = AnimativeTitle();
+          _visible = true;
+          name = ResponsiveWidget(
+            largeScreen: AnimativeTitle(namefontSize: 60.0,descfontSize: 15.0),
+            smallScreen: AnimativeTitle(namefontSize: 45.0,descfontSize: 10.0),
+          );
 
         }
       }
@@ -84,92 +88,104 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
         child: Stack(
           children: <Widget>[
             ParallaxWidget(
+              duration: 0,
               top: rateZero,
               asset: "parallax0",
               height: sheight,
               width: swidth,
             ),
             ParallaxWidget(
+              duration: 0,
               top: rateOne,
               asset: "parallax1",
               height: sheight,
               width: swidth,
             ),
             ParallaxWidget(
+              duration: 0,
               top: rateTwo,
               asset: "parallax2",
               height: sheight,
               width: swidth,
             ),
             ParallaxWidget(
+              duration: 0,
               top: rateThree,
               asset: "parallax3",
               height: sheight,
               width: swidth,
             ),
             ParallaxWidget(
+              duration: 0,
               top: rateFour,
               asset: "parallax4",
               height: sheight,
               width: swidth,
             ),
             ParallaxWidget(
+              duration: 0,
               top: rateFive,
               asset: "parallax5",
               height: sheight,
               width: swidth,
             ),
             ParallaxWidget(
+              duration: 0,
               top: rateSix,
               asset: "parallax6",
               height: sheight,
               width: swidth,
             ),
             ParallaxWidget(
+              duration: 0,
               top: rateSeven,
               asset: "parallax7",
               height: sheight,
               width: swidth,
             ),
             ParallaxWidget(
+              duration: 0,
               top: rateEight,
               asset: "parallax8",
               height: sheight,
               width: swidth,
             ),
-            ListView(
-              controller: _controller,
-              children: <Widget>[
-                Container(
-                  height: 700,
-                  color: Colors.transparent,
-                ),
-                Container(
-                  color: kDarkBrownColor,
-                  width: double.infinity,
-                  padding: EdgeInsets.only(top: 70),
-                  child: Container(
-                    height: sheight,
-                    width: swidth,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-
-                      children: <Widget>[
-                        SizedBox(),
-                        Center(
-                          child: name,
-                        ),
-                        SizedBox(height: 30.0),
-                        Container(
-                          child: animatedIcons,
-                        ),
-
-                      ],
-                    ),
-                    color: kDarkBrownColor,
+           AnimatedPositioned(
+              duration: Duration(seconds:1000),
+              child: ListView(
+                controller: _controller,
+                children: <Widget>[
+                  Container(
+                    height: 700,
+                    color: Colors.transparent,
                   ),
-                ),
-              ],
+                  Container(
+                    color: kDarkBrownColor,
+                    width: double.infinity,
+                    padding: EdgeInsets.only(top: 70),
+                    child: Container(
+                      height: sheight,
+                      width: swidth,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+
+                        children: <Widget>[
+                          SizedBox(),
+                          Center(
+                            child: name,
+                          ),
+                          SizedBox(height: 30.0),
+                          Container(
+                            child: animatedIcons,
+                          ),
+
+                        ],
+                      ),
+                      color: kDarkBrownColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
             AnimatedOpacity(
               duration: Duration(seconds:1),
@@ -181,7 +197,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                 children:<Widget>[
 
                   Center(
-                    child: copyRight,
+                    child: copyRightPC,
                   ),
 
                 ],

@@ -7,7 +7,12 @@ import 'constants.dart';
 class AnimativeTitle extends StatelessWidget {
   const AnimativeTitle({
     Key key,
+    @required this.namefontSize,
+    @required this.descfontSize,
   }) : super(key: key);
+
+  final double namefontSize;
+  final double descfontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +28,7 @@ class AnimativeTitle extends StatelessWidget {
             Text(
               'Arun Balaji R',
               style: GoogleFonts.montserrat(
-                fontSize: 60,
+                fontSize: namefontSize,
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.w700,
                 color: kYellow,
@@ -33,7 +38,7 @@ class AnimativeTitle extends StatelessWidget {
             Text(
               'Developer  •  Designer  •  Flutter Enthusiast  •  Open to Learning',
               style: GoogleFonts.montserrat(
-                fontSize: 15,
+                fontSize: descfontSize,
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.w400,
                 color: Colors.white,
