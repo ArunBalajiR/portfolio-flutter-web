@@ -96,6 +96,7 @@ class HoverIcon extends StatelessWidget {
       direction: Direction.vertical,
       offset: 1.0,
       child: GestureDetector(
+
         onTap: (){
           _launchURL(url);
         },

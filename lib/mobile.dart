@@ -110,14 +110,13 @@ class _MobileHomePageState extends State<MobileHomePage> {
                         height: sheight,
                         color: kDarkBrownColor,
                         width: double.infinity,
-                        padding: EdgeInsets.only(top: 70),
+                        // padding: EdgeInsets.only(top: 20),
                         child: Container(
                           height: sheight,
                           width: swidth,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              SizedBox(),
                               Center(
                                 child: name,
                               ),

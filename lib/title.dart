@@ -25,13 +25,16 @@ class AnimativeTitle extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Arun Balaji R',
-              style: GoogleFonts.montserrat(
-                fontSize: namefontSize,
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w700,
-                color: kYellow,
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                'Arun Balaji R',
+                style: GoogleFonts.montserrat(
+                  fontSize: namefontSize,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w700,
+                  color: kYellow,
+                ),
               ),
             ),
             SizedBox(height: 10),
