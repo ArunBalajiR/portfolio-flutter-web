@@ -1,12 +1,22 @@
 # My Personal Portfolio
 
+[![Made with Flutter](https://img.shields.io/badge/Made%20with-Flutter-%2345D1FE)](https://flutter.dev/)
+
 A responsive portfolio site using flutter web. The parallax design is inspired from [Firewatch website](https://firewatchgame.com/)
 
-Hello guys, This is a personal blog of me and can be also considered as a portfolio.This is't a completed work, it is an ongoing project and will be updated each month.My programming status will be updated on this blog as well thus, it will ecourage me to code more and more and also, it might inspire a few.
+This is a personal blog of me and can be also considered as a portfolio.This is't a completed work, it is an ongoing project and will be updated each month.My programming status will be updated on this blog as well thus, it will ecourage me to code more and more and also, it might inspire a few.
 
 ## Screenshots Preview
 
  
+ <p float="left">
+    <img src="https://raw.githubusercontent.com/ArunBalajiR/portfolio-flutter-web/master/assets/mobile.gif" width="50%" height="50%" style="margin: 0px 0px 0px 0px;">
+    <img src="https://raw.githubusercontent.com/ArunBalajiR/portfolio-flutter-web/master/assets/pc.gif" width="62.5%" style="margin: 0px 0px 0px 0px;">
+ </p> 
+ 
+## Live Site
+
+You can see the live site by clicking [here](http://arunbalajir.github.io/)
 
 ## Getting Started
 
