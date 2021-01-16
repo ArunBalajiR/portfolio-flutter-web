@@ -1,6 +1,12 @@
-# portfolio
+# My Personal Portfolio
 
-A new Flutter project.
+A responsive portfolio site using flutter web. The parallax design is inspired from [Firewatch website](https://firewatchgame.com/)
+
+Hello guys, This is a personal blog of me and can be also considered as a portfolio.This is't a completed work, it is an ongoing project and will be updated each month.My programming status will be updated on this blog as well thus, it will ecourage me to code more and more and also, it might inspire a few.
+
+## Screenshots Preview
+
+ 
 
 ## Getting Started
 
