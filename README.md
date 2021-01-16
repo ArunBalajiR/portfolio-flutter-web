@@ -10,8 +10,9 @@ This is a personal blog of me and can be also considered as a portfolio.This is'
 
  
  <p float="left">
-    <img src="https://raw.githubusercontent.com/ArunBalajiR/portfolio-flutter-web/master/assets/mobile.gif" width="50%" height="50%" style="margin: 0px 0px 0px 0px;">
     <img src="https://raw.githubusercontent.com/ArunBalajiR/portfolio-flutter-web/master/assets/pc.gif" width="62.5%" style="margin: 0px 0px 0px 0px;">
+    <img src="https://raw.githubusercontent.com/ArunBalajiR/portfolio-flutter-web/master/assets/mobile.gif" height="700" style="margin: 0px 0px 0px 0px;">
+    
  </p> 
  
 ## Live Site
